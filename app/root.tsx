@@ -9,8 +9,25 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 
+import favIconUrl from "./assets/favicon.svg";
+import fontStyles from "./styles/fonts.css";
+import tailwindCSS from "./styles/tailwind.css";
+
 export const links: LinksFunction = () => [
   ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
+  {
+    rel: "icon",
+    href: favIconUrl,
+    type: "image/png",
+  },
+  {
+    rel: "stylesheet",
+    href: fontStyles,
+  },
+  {
+    rel: "stylesheet",
+    href: tailwindCSS,
+  },
 ];
 
 export default function App() {
