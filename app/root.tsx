@@ -1,6 +1,7 @@
 import { cssBundleHref } from "@remix-run/css-bundle";
 import type { LinksFunction } from "@remix-run/node";
 import {
+  Link,
   Links,
   LiveReload,
   Meta,
@@ -40,6 +41,21 @@ export default function App() {
         <Links />
       </head>
       <body>
+        <header className="p-2">
+          <nav>
+            <ul className="flex gap-4">
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/users">users</Link>
+              </li>
+              <li>
+                <Link to="/users/khaled/notes">notes</Link>
+              </li>
+            </ul>
+          </nav>
+        </header>
         <Outlet />
         <ScrollRestoration />
         <Scripts />
